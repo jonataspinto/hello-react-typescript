@@ -5,7 +5,7 @@ import GlobalStyles from './styles/global';
 import { light, dark} from './styles/themes';
 import usePersisteThemedState from './utils/usePersistedThemeState';
 
-import Header from './components/Header/header'
+import Header from './components/Header'
 
 const App = () => {
   const [theme, setTheme] = usePersisteThemedState('theme', light)
@@ -18,8 +18,7 @@ const App = () => {
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
-        <button onClick={toggleTheme}>muda</button>
-        <Header/>
+        <Header toggleTheme={toggleTheme}/>
         <GlobalStyles/>
         <Routes/>
       </ThemeProvider>
